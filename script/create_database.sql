@@ -14,7 +14,7 @@ CREATE DATABASE Fibre;
 GO
 
 -- Switch to the newly created Fibre database for table creation
-USE Fibre; -- 👈 Added this for good practice
+USE Fibre;
 GO
 
 -- Drop and recreate the 'Product_Sold' table
@@ -23,8 +23,8 @@ IF OBJECT_ID('Product_Sold', 'U') IS NOT NULL
 GO
 
 CREATE TABLE Product_Sold (
-    [Order ID]                  INT,
-    [Final Product Name]        NVARCHAR(50)
+    [Order ID]                  NVARCHAR(50),  -- Changed from INT to NVARCHAR(50)
+    [Final Product Name]        NVARCHAR(200)  -- Increased from NVARCHAR(50) to NVARCHAR(200)
 );
 GO
 
@@ -34,8 +34,8 @@ IF OBJECT_ID('ReXI_Bundles_Required', 'U') IS NOT NULL
 GO
 
 CREATE TABLE ReXI_Bundles_Required(
-    [Final Product]                                 NVARCHAR(50),
-    [ReXI Fiber Required To Make Final Product]     NVARCHAR(50),
-    [Quantity of ReXI Fiber Bundles Required To Make Final Product] INT
+    [Final Product]                                 NVARCHAR(200), -- Increased from NVARCHAR(50) to NVARCHAR(200)
+    [ReXI Fiber Required To Make Final Product]     NVARCHAR(200), -- Increased from NVARCHAR(50) to NVARCHAR(200)
+    [Quantity of ReXI Fiber Bundles Required To Make Final Product] NVARCHAR(200) -- Changed from INT to NVARCHAR(200)
 );
 GO
